@@ -1,10 +1,12 @@
+package game;
+
 import java.util.Random;
 import java.util.Stack;
 
 public class Deck {
     private Stack<Integer> cards;
 
-    Deck(){
+    public Deck(){
         cards = new Stack<>();
         for (int i = 0; i < 100; i++) {
             cards.push(i);

@@ -1,3 +1,5 @@
+import game.Board;
+import gui.Constants;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,19 +9,18 @@ import java.util.Random;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class BoardTest {
 
     private Board testBoard1;
-//    private Board testBoard2;
+//    private game.Board testBoard2;
     private Board testBoard3;
 
     @Before
     public void Setup() {
         testBoard1 = new Board();
-//        testBoard2 = new Board();
+//        testBoard2 = new game.Board();
         testBoard3 = new Board();
     }
 

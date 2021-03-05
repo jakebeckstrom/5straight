@@ -1,3 +1,7 @@
+package game;
+
+import gui.Constants;
+
 import java.util.HashMap;
 
 public class Board {
@@ -16,7 +20,7 @@ public class Board {
     private int dead;
     private final HashMap<Integer, Integer> used;
 
-    Board() {
+    public Board() {
         this.play = new char[10][10];
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
