@@ -25,6 +25,13 @@ public class GameBoard extends javax.swing.JPanel {
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Sets the game variables and refreshes the board.
+	 * @param game Shared game object.
+	 * @param status Status text to be displayed.
+	 * @param p1 Player 1.
+	 * @param p2 Player 2.
+	 */
 	GameBoard(Game game, JLabel status, Player p1, Player p2) {
 		
 		this.game = game;
@@ -32,8 +39,8 @@ public class GameBoard extends javax.swing.JPanel {
 		this.p1 = p1;
 		this.p2 = p2;
 		
-        this.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        this.setLayout(new GridLayout(10, 10, 5, 5));
+        setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        setLayout(new GridLayout(10, 10, 5, 5));
         refreshBoard('0',0);
 	}
 
@@ -94,7 +101,13 @@ public class GameBoard extends javax.swing.JPanel {
 	public void setController(Controller controller) {
 		this.controller = controller;
 	}
-	
+
+	/**
+	 * Checks for a winner, then refreshes board.
+	 * Will render all spaces above selected card as a button.
+	 * @param winner Checks for a winner.
+	 * @param selectedCard Will only allow user to select space greater than the selected card.
+	 */
 	public void refreshBoard(char winner, int selectedCard) {
 		this.removeAll();
 		if (winner == '0') {

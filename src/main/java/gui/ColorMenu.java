@@ -13,16 +13,16 @@ import static java.awt.Color.blue;
  */
 public class ColorMenu extends JPanel {
 
-    /**
-     * Stores the currently Selected color.
-     */
+    // Stores the currently Selected color.
     private Color playerColor;
 
-    /**
-     * Maps the readable color name to the Color class field.
-     */
-    HashMap<String, Color> colorMap;
 
+    // Maps the readable color name to the Color class field.
+    private final HashMap<String, Color> colorMap;
+
+    /**
+     * Instantiates color menu and fills the color map with available colors.
+     */
     public ColorMenu() {
         colorMap = new HashMap<>();
         colorMap.put("Red", Color.RED);
@@ -49,6 +49,10 @@ public class ColorMenu extends JPanel {
         return button;
     }
 
+    /**
+     * Gets the currently selected color.
+     * @return Color object of selected color.
+     */
     public Color getColor() {
         return playerColor;
     }

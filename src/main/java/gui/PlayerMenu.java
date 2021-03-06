@@ -22,6 +22,9 @@ public class PlayerMenu extends JPanel {
      */
     HashMap<String, Character> playerMap;
 
+    /**
+     * Instantiates Map of player options, renders list of selector buttons.
+     */
     public PlayerMenu() {
         playerMap = new HashMap<>();
         playerMap.put("Player", Constants.HUMAN);
@@ -46,7 +49,14 @@ public class PlayerMenu extends JPanel {
         return button;
     }
 
+    /**
+     * Gets the Player object of the selected player type.
+     * @param game Shared game object - to pass to Player
+     * @param player Player 1 or Player 2.
+     * @return Player object of selected type.
+     */
     public Player getType(Game game, char player) {
+        // To add more player types
         switch (type) {
             case Constants.EASY_BOT:
                 return new EasyBot(game, player);

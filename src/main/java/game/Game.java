@@ -27,6 +27,11 @@ public class Game {
      */
     private char winner;
 
+    /**
+     * Instantiates game variables.
+     * Fills Both of the player's hands.
+     * Sets turn to Player 1.
+     */
     public Game() {
         gameDeck = new Deck();
         gameBoard = new Board();
@@ -40,10 +45,19 @@ public class Game {
         }
     }
 
+    /**
+     * Gets current board.
+     * @return 2-D array representation of game board.
+     */
     public int[][] getCurrentBoard() {
         return gameBoard.getBoard();
     }
 
+    /**
+     * Gets the hand for specified player.
+     * @param player Specified player.
+     * @return Returns ArrayList of players hand.
+     */
     public ArrayList<Integer> getHand(char player) {
         if (player == Constants.PLAYER_ONE_PEG) {
             return player1Hand;
@@ -51,11 +65,20 @@ public class Game {
             return player2Hand;
         }
     }
-   
+
+    /**
+     * Gets current turn
+     * @return The char representation of the players turn.
+     */
     public char getTurn() {
         return (turn ? Constants.PLAYER_ONE_PEG: Constants.PLAYER_TWO_PEG);
     }
 
+    /**
+     * Checks if the card is dead.
+     * @param card Card to check.
+     * @return True if dead, false if not.
+     */
     public boolean isDead(int card) {
         return gameBoard.isDead(card);
     }
@@ -70,6 +93,14 @@ public class Game {
         }
     }
 
+    /**
+     * Performs action of turn on the board and deck.
+     * @param player Current player.
+     * @param action Draw or Play action.
+     * @param card Card chosen (Ignored if action draw).
+     * @param space Space chosen (Ignored if action draw).
+     * @throws Exception If the space is larger than the card, or if the draw fails.
+     */
     public void turnAction(char player, int action, int card, int space) throws Exception {
         if (action == Constants.ACTION_DRAW) {
             try {
@@ -103,10 +134,19 @@ public class Game {
         }
     }
 
+    /**
+     * Checks if there is a winner.
+     * @return Returns 0 if no winner, and player number if winner.
+     */
     public char getWinner() {
         return winner;
     }
 
+    /**
+     * Checks if a card is valid
+     * @param card Card to check.
+     * @return True if valid, false if not.
+     */
     public boolean isValid(int card) {
         return gameBoard.isValid(card);
     }

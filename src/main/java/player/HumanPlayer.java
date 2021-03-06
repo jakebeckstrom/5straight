@@ -18,15 +18,6 @@ public class HumanPlayer extends Player{
     }
 
     @Override
-    public void takeTurn(char action, int card, int space) {
-        try {
-            game.turnAction(player, action, card, space);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public boolean isBot() {
         return false;
     };

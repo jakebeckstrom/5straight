@@ -35,6 +35,13 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Instantiates the game objects and updates board and cards.
+	 * @param game Shared Game object
+	 * @param gameBoard GameBoard GUI object
+	 * @param p1 Player 1
+	 * @param p2 Player 2
+	 */
 	Controller(Game game, GameBoard gameBoard, Player p1, Player p2) {
 		
 		this.game = game;
@@ -53,7 +60,7 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
         updateCardPanel();
     }
 
-    private void initializeMenu() {
+	private void initializeMenu() {
 		menu = new JPanel();
 		menu.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 25));
 		JButton reset = new AppButton("Reset", 200, 50);
@@ -71,7 +78,11 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
 		menu.add(reset);
 		menu.add(showP2);
 	}
-	
+
+	/**
+	 * Updates the Card panel to the current player hands.
+	 * Only allows one player at a time to view their cards.
+	 */
 	public void updateCardPanel() {
 		showCards = false;
 
@@ -119,11 +130,18 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
 		cardPanel.revalidate();
 		cardPanel.repaint();
 	}
-     
+
+	/**
+	 * Updates the board in GameBoard.
+	 */
 	public void updateBoard() {
 		gameBoard.refreshBoard(game.getWinner(), 100);
 	}
 
+	/**
+	 * Catch all for any button event fired in the controller.
+	 * @param actionEvent The action performed by the button.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
 		String command = actionEvent.getActionCommand();

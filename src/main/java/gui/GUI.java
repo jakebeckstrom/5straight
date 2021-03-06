@@ -21,7 +21,10 @@ public class GUI extends javax.swing.JFrame {
     // The two player menu components
     PlayerMenu playerMenuP1;
     PlayerMenu playerMenuP2;
-    
+
+    /**
+     * Sets up window properties, then renders the menu.
+     */
     public GUI(){
 
         setUpMenu();
@@ -100,6 +103,10 @@ public class GUI extends javax.swing.JFrame {
         this.repaint();
     }
 
+    /**
+     * Entry point
+     * @param args No args
+     */
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> new GUI().setVisible(true));
     }
