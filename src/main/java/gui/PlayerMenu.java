@@ -7,12 +7,19 @@ import java.awt.*;
 import java.util.HashMap;
 
 /**
- * Creates menu that allows the user to choose their type of player (Human vs. Bot)
+ * Creates menu that allows the user to choose their type of player (Human vs. Bot).
  * @author Jacob Beckstrom
  */
 public class PlayerMenu extends JPanel {
 
+    /**
+     * Stores currently selected type.
+     */
     private char type;
+
+    /**
+     * Maps readable player name to Player type.
+     */
     HashMap<String, Character> playerMap;
 
     public PlayerMenu() {

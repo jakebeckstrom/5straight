@@ -8,8 +8,20 @@ import java.awt.*;
  * @author Jacob Beckstrom
  */
 public abstract class Player {
+
+    /**
+     * The players selected color.
+     */
     private Color color;
+
+    /**
+     * Shared Game object.
+     */
     protected Game game;
+
+    /**
+     * Specifies between Player 1 and Player2.
+     */
     protected char player;
 
     public Player(Game game, char player) {

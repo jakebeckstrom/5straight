@@ -8,6 +8,9 @@ import java.util.Stack;
  * @author Jacob Beckstrom
  */
 public class Deck {
+    /**
+     * Stores the cards in a FIFO manner
+     */
     private Stack<Integer> cards;
 
     public Deck(){

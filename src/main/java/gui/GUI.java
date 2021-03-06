@@ -12,14 +12,13 @@ import javax.swing.*;
  */
 public class GUI extends javax.swing.JFrame {
 
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
+	// The two color menu components
     ColorMenu colorMenuP1;
     ColorMenu colorMenuP2;
 
+    // The two player menu components
     PlayerMenu playerMenuP1;
     PlayerMenu playerMenuP2;
     

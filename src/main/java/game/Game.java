@@ -5,18 +5,26 @@ import java.util.ArrayList;
 
 
 /**
- * Combines Deck and Board classes to play full game
+ * Combines Deck and Board classes to play full game.
  * @author Jacob Beckstrom
  */
 public class Game {
 
+    // Deck and Board objects
     private final Deck gameDeck;
     private final Board gameBoard;
 
+    // Hand for each player
     private final ArrayList<Integer> player1Hand;
     private final ArrayList<Integer> player2Hand;
 
+    /**
+     * Toggles the current turn.
+     */
     private boolean turn;
+    /**
+     * Toggles which player has won. Initially set to Constants.NO_WIN.
+     */
     private char winner;
 
     public Game() {

@@ -8,8 +8,11 @@ import java.util.HashMap;
  * Contains a representation of the 10x10 Game board and methods to interact with it.
  * @author Jacob Beckstrom
  */
-
 public class Board {
+    /**
+     * 2-D array Board representation that only contains the values for squares.
+     * Only used for reference, never gets changed.
+     */
     private final int[][] values = {{ 73, 74, 75, 76, 77, 78, 79, 80, 81, 82 },
             { 72, 71, 70, 69, 68, 67, 66, 65, 64, 83 },
             { 43, 42, 13, 12, 11, 10, 25, 26, 63, 84 },
@@ -21,8 +24,18 @@ public class Board {
             { 49, 50, 51, 52, 53, 54, 55, 56, 57, 90 },
             {  0, 99, 98, 97, 96, 95, 94, 93 ,92, 91 }};
 
+    /**
+     * 2-D Array used to store the players moves
+     */
     private final char[][] play;
+    /**
+     * Contains the dead number.
+     * All cards equal to or greater than this number cannot be played.
+     */
     private int dead;
+    /**
+     * Stores the used cards.
+     */
     private final HashMap<Integer, Integer> used;
 
     public Board() {
@@ -130,6 +143,7 @@ public class Board {
     	} catch (Exception e) {
     		System.out.println(e.getMessage());
     	}
+
         return play[coord[0]][coord[1]] == Constants.OPEN_SPACE && card < dead;
     }
 

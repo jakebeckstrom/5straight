@@ -18,14 +18,12 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
 
 	// Components
 	private JPanel menu;
-	private final JPanel player1;
-	private final JPanel player2;
+	private final JPanel player1, player2;
 	
 	// Buttons
-	private JButton showP1;
-	private JButton showP2;
+	private JButton showP1, showP2;
   
-	//Toggles 
+	//Toggle
 	private boolean showCards;
 	
 	//Game Object
@@ -33,12 +31,8 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
 	private final GameBoard gameBoard;
 
 	//Players
-	private final Player p1;
-	private final Player p2;
+	private final Player p1, p2;
 
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	Controller(Game game, GameBoard gameBoard, Player p1, Player p2) {

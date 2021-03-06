@@ -18,12 +18,11 @@ public class GameBoard extends javax.swing.JPanel {
 	
 	private Game game;
 	private Controller controller;
+
+
 	private final JLabel status;
 	private final Player p1, p2;
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	GameBoard(Game game, JLabel status, Player p1, Player p2) {
