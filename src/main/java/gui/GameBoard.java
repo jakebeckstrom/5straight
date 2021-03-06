@@ -10,6 +10,10 @@ import java.awt.GridLayout;
 import javax.swing.*;
 import javax.swing.border.Border;
 
+/**
+ * Displays the board from Game, as well as buttons to select space to play
+ * @author Jacob Beckstrom
+ */
 public class GameBoard extends javax.swing.JPanel {
 	
 	private Game game;

@@ -3,6 +3,10 @@ package player;
 import game.Game;
 import java.awt.*;
 
+/**
+ * Parent class to all player types. Implements all methods besides chooseTurn() and takeTurn()
+ * @author Jacob Beckstrom
+ */
 public abstract class Player {
     private Color color;
     protected Game game;

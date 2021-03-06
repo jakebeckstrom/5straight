@@ -1,10 +1,13 @@
 package game;
 
 import gui.Constants;
-import game.Deck;
-
 import java.util.ArrayList;
 
+
+/**
+ * Combines Deck and Board classes to play full game
+ * @author Jacob Beckstrom
+ */
 public class Game {
 
     private final Deck gameDeck;

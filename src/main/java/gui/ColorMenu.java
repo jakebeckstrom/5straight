@@ -6,6 +6,11 @@ import java.util.HashMap;
 
 import static java.awt.Color.blue;
 
+
+/**
+ * Creates a menu that allows the each user to select their color
+ * @author Jacob Beckstrom
+ */
 public class ColorMenu extends JPanel {
 
     private Color playerColor;

@@ -2,6 +2,10 @@ package player;
 
 import game.*;
 
+/**
+ * Does not choose the play. Delegates selection to a button in the UI.
+ * @author Jacob Beckstrom
+ */
 public class HumanPlayer extends Player{
 
     public HumanPlayer(Game game, char player) {

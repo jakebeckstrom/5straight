@@ -4,6 +4,11 @@ import game.*;
 import gui.Constants;
 import java.util.*;
 
+
+/**
+ * Randomly selects play. Meant to be easily beaten
+ * @author Jacob Beckstrom
+ */
 public class EasyBot extends Player {
 
     public EasyBot(Game game, char player) {

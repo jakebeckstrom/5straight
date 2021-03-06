@@ -3,6 +3,10 @@ package ui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Provides simplified, universally implementation of JButton
+ * @author Jacob Beckstrom
+ */
 public class AppButton extends JButton {
 
     public AppButton(String label) {

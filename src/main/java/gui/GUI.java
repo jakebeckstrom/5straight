@@ -6,6 +6,10 @@ import ui.*;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ * Sets up the Gui pages, toggles between menu and game
+ * @author Jacob Beckstrom
+ */
 public class GUI extends javax.swing.JFrame {
 
     /**

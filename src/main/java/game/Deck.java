@@ -3,6 +3,10 @@ package game;
 import java.util.Random;
 import java.util.Stack;
 
+/**
+ * Contains representation of a deck of cards numbered 0-99
+ * @author Jacob Beckstrom
+ */
 public class Deck {
     private Stack<Integer> cards;
 

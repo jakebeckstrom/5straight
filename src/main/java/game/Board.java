@@ -4,6 +4,11 @@ import gui.Constants;
 
 import java.util.HashMap;
 
+/**
+ * Contains a representation of the 10x10 Game board and methods to interact with it.
+ * @author Jacob Beckstrom
+ */
+
 public class Board {
     private final int[][] values = {{ 73, 74, 75, 76, 77, 78, 79, 80, 81, 82 },
             { 72, 71, 70, 69, 68, 67, 66, 65, 64, 83 },

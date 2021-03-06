@@ -10,6 +10,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * Contains the Buttons used to control the game
+ * @author Jacob Beckstrom
+ */
 public class Controller extends javax.swing.JPanel implements ActionListener {
 
 	// Components

@@ -3,6 +3,10 @@ package ui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Provides Simplified, universal implementation of JLabel
+ * @author Jacob Beckstrom
+ */
 public class AppLabel extends JLabel {
 
     public AppLabel(String label) {
