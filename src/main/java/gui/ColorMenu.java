@@ -28,8 +28,12 @@ public class ColorMenu extends JPanel {
         colorMap.put("Red", Color.RED);
         colorMap.put("Blue", Color.BLUE);
         colorMap.put("Green", Color.GREEN);
+        colorMap.put("Orange", Color.ORANGE);
+        colorMap.put("Yellow", Color.YELLOW);
+        colorMap.put("Pink", Color.PINK);
+        colorMap.put("Gray", Color.GRAY);
 
-        this.setLayout(new GridLayout(4,1));
+        this.setLayout(new GridLayout(colorMap.size(),1));
         ButtonGroup colorSelector = new ButtonGroup();
         for (String color : colorMap.keySet()) {
             JRadioButton button = createMenuOption(color);

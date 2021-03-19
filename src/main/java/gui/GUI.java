@@ -60,8 +60,7 @@ public class GUI extends javax.swing.JFrame {
         startMenuP1.setBorder(BorderFactory.createEmptyBorder(100,200,300,200));
         startMenuP2.setBorder(BorderFactory.createEmptyBorder(100,200,300,200));
 
-        JButton start = new AppButton("Start", 0, 100, 50);
-        start.addActionListener(e -> startGame());
+        JButton start = new AppButton("Start", 0, 100, 50, e -> startGame());
 
         add(new AppLabel("Start Menu", 50), BorderLayout.PAGE_START);
         add(startMenuP1, BorderLayout.LINE_START);
@@ -75,7 +74,7 @@ public class GUI extends javax.swing.JFrame {
         this.getContentPane().removeAll();
 
         JPanel status = new JPanel();
-        JLabel stat = new AppLabel("Test", 40);
+        JLabel stat = new AppLabel("Start Game", 40);
 
         JButton exit = new AppButton("Exit");
         exit.addActionListener(e -> setUpMenu());

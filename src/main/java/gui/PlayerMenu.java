@@ -31,7 +31,7 @@ public class PlayerMenu extends JPanel {
         playerMap.put("Easy Bot", Constants.EASY_BOT);
 
         ButtonGroup playerSelector = new ButtonGroup();
-        setLayout(new GridLayout(1,1));
+        setLayout(new GridLayout(playerMap.size(),1));
 
         for (String player : playerMap.keySet()) {
             JRadioButton button = createMenuOption(player);

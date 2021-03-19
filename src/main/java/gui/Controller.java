@@ -48,7 +48,7 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
 		this.gameBoard = gameBoard;
 		this.p1 = p1;
 		this.p2 = p2;
-		this.setLayout(new BorderLayout());
+		setLayout(new BorderLayout());
 		
 		initializeMenu();
 		add(menu, BorderLayout.PAGE_START);
@@ -63,15 +63,12 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
 	private void initializeMenu() {
 		menu = new JPanel();
 		menu.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 25));
-		JButton reset = new AppButton("Reset", 200, 50);
-		reset.addActionListener(this);
+		JButton reset = new AppButton("Reset", 200, 50, this);
 
-		showP1 = new AppButton("Show Cards", 200, 50);
-		showP1.addActionListener(this);
+		showP1 = new AppButton("Show Cards", 200, 50, this);
 		showP1.setEnabled(game.getTurn() == Constants.PLAYER_ONE_PEG);
 
-		showP2 = new AppButton("Show Cards", 200, 50);
-		showP2.addActionListener(this);
+		showP2 = new AppButton("Show Cards", 200, 50, this);
 		showP2.setEnabled(game.getTurn() == Constants.PLAYER_TWO_PEG);
 
 		menu.add(showP1);
@@ -118,13 +115,11 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
 	    	ArrayList<Integer> hand = game.getHand(player.getPlayer());
 			for (Integer integer : hand) {
 				int c = integer;
-				JButton card = new AppButton(String.valueOf(c), 100, 50, 30);
+				JButton card = new AppButton(String.valueOf(c), 100, 50, 30, this);
 				card.setEnabled(!game.isDead(c));
-				card.addActionListener(this);
 				cardPanel.add(card);
 			}
-	    	JButton draw = new AppButton("Draw", 100, 50);
-	    	draw.addActionListener(this);
+	    	JButton draw = new AppButton("Draw", 100, 50, this);
 	    	cardPanel.add(draw);
 		}
 		cardPanel.revalidate();
