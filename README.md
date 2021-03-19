@@ -4,8 +4,10 @@
 
 Check out the project to see the full backlog  of features and the current features being worked on.
 
-For the next version I willl be working on:
- - 
+For the next version I will be working on:
+ - Fixing the bug that sometimes does not detect a winning condition
+ - Adding a dialog that displays the bots chosen move when playing a bot
+ - Adding a tutorial mode using Swing Tool tips
 
 ### Motivation
 I chose to build this project to improve my Java skills, practice building a User interface and practice using Artifical intelligence Algorithms. The motivation for choosing the game 5-Straight was simply because it was unique. I am not aware of any implementations of this game, which would force me to build it from scratch.
