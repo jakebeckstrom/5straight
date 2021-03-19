@@ -1,5 +1,12 @@
 # 5straight
 
+### Latest Changes
+
+Check out the project to see the full backlog  of features and the current features being worked on.
+
+For the next version I willl be working on:
+ - 
+
 ### Motivation
 I chose to build this project to improve my Java skills, practice building a User interface and practice using Artifical intelligence Algorithms. The motivation for choosing the game 5-Straight was simply because it was unique. I am not aware of any implementations of this game, which would force me to build it from scratch.
 
