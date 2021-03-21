@@ -1,10 +1,20 @@
+package game;
+
 import java.util.Random;
 import java.util.Stack;
 
+/**
+ * Contains representation of a deck of cards numbered 0-99
+ * @author Jacob Beckstrom
+ */
 public class Deck {
+
     private Stack<Integer> cards;
 
-    Deck(){
+    /**
+     * Instantiates card Stack and shuffles the deck.
+     */
+    public Deck(){
         cards = new Stack<>();
         for (int i = 0; i < 100; i++) {
             cards.push(i);
@@ -12,6 +22,7 @@ public class Deck {
         shuffle();
     }
 
+    // Purely side effect method
     private void shuffle() {
         int[] shuf = new int[100];
         for (int i =0; i < 100; i++) {
@@ -30,16 +41,24 @@ public class Deck {
         }
     }
 
+    // Helper for shuffle
     private void swap(int[] deck, int i, int j) {
         int temp = deck[i];
         deck[i] = deck[j];
         deck[j] = temp;
     }
 
+    /**
+     * Draws a card off of the top of the deck.
+     * @return The first card in the deck.
+     */
     public int draw() {
         return this.cards.pop();
     }
 
+    /**
+     * Creates a new deck.
+     */
     public void reset() {
         cards = null;
         cards = new Stack<>();

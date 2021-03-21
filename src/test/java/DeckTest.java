@@ -1,3 +1,4 @@
+import game.Deck;
 import org.junit.Before;
 import org.junit.Test;
 
