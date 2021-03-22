@@ -6,8 +6,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 public class GameTest {
@@ -45,11 +44,11 @@ public class GameTest {
     public void testBoard() {
         testgame = new Game();
         int[][] testBoard = testgame.getCurrentBoard();
-        int[] noDup = new int[100];
+        Integer[] noDup = new Integer[100];
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 int val = testBoard[i][j];
-                assertEquals(null, noDup[val]);
+                assertNull(noDup[val]);
                 noDup[val] = 1;
             }
         }

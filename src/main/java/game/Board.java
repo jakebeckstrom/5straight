@@ -116,21 +116,21 @@ public class Board {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 if (play[i][j] == player) {
-                    if (i < 5 && play[i+1][j] == player) {
+                    if (i <= 5 && play[i+1][j] == player) {
                         int inarow = 2;
                         while (play[i+inarow][j] == player) {
                             inarow++;
                             if (inarow == 5) return true;
                         }
                     }
-                    if (i < 5 && j < 5 && play[i+1][j+1] == player) {
+                    if (i <= 5 && j < 5 && play[i+1][j+1] == player) {
                         int inarow = 2;
                         while (play[i+inarow][j+inarow] == player) {
                             inarow++;
                             if (inarow == 5) return true;
                         }
                     }
-                    if (j < 5 && play[i][j+1] == player) {
+                    if (j <= 5 && play[i][j+1] == player) {
                         int inarow = 2;
                         while (play[i][j+inarow] == player) {
                             inarow++;
