@@ -91,37 +91,35 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
 
 		add(player1, BorderLayout.LINE_START);
         add(player2, BorderLayout.LINE_END);
-		if (game.getTurn() == Constants.PLAYER_ONE_PEG) {
-			if (p1.isBot()) {
-				botTurn(p1);
-			}
-		} else if (game.getTurn() == Constants.PLAYER_TWO_PEG){
-			if (p2.isBot()) {
-				botTurn(p2);
-			}
-		}
 	}
 
 	private void refreshHand(JPanel cardPanel, Player player) {
 		cardPanel.removeAll();
         cardPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 20,20));
-        if (player.getPlayer() == Constants.PLAYER_ONE_PEG && !showCards) {
+        if (player.isBot()) {
+        	if (game.getTurn() == player.getPlayer()) {
+				StringBuilder dialogText = new StringBuilder();
+        		botTurn(player, dialogText);
+				JLabel botDialog = new AppLabel(dialogText.toString());
+				cardPanel.add(botDialog);
+			}
+		} else if (player.getPlayer() == Constants.PLAYER_ONE_PEG && !showCards) {
 			JLabel hide = new AppLabel("Hidden");
 			cardPanel.add(hide);
 		} else if (player.getPlayer() == Constants.PLAYER_TWO_PEG && !showCards) {
 			JLabel hide = new AppLabel("Hidden");
 			cardPanel.add(hide);
 		} else {
-	    	ArrayList<Integer> hand = game.getHand(player.getPlayer());
+			ArrayList<Integer> hand = game.getHand(player.getPlayer());
 			for (Integer integer : hand) {
 				int c = integer;
 				JButton card = new AppButton(String.valueOf(c), 100, 50, 30, this);
 				card.setEnabled(!game.isDead(c));
 				cardPanel.add(card);
 			}
-	    	JButton draw = new AppButton("Draw", 100, 50, this);
-	    	cardPanel.add(draw);
-		}
+			JButton draw = new AppButton("Draw", 100, 50, this);
+			cardPanel.add(draw);
+        }
 		cardPanel.revalidate();
 		cardPanel.repaint();
 	}
@@ -173,10 +171,11 @@ public class Controller extends javax.swing.JPanel implements ActionListener {
 		}
 	}
 
-	private void botTurn(Player player) {
+	private void botTurn(Player player, StringBuilder dialog) {
 		int[] turn = player.chooseTurn();
-		for (int i : turn) {
-			System.out.println(i);
+		dialog.append( (turn[0] == Constants.ACTION_DRAW ? "I will draw" : "I will play card: ") );
+		if (turn[0] != Constants.ACTION_DRAW) {
+			dialog.append(turn[1]).append(" on space: ").append(turn[2]);
 		}
 		player.takeTurn((char)turn[0], turn[1], turn[2]);
 		updateCardPanel();
